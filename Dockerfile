@@ -19,16 +19,16 @@ ENV DEBIAN_FRONTEND=noninteractive \
 
 # http://askubuntu.com/a/235911/134645
 # Remove with: sudo apt-key del 2EA8F35793D8809A
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 2EA8F35793D8809A \
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 2EA8F35793D8809A \
   && apt-key update -qqy
 # Remove with: sudo apt-key del 40976EAF437D05B5
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 40976EAF437D05B5 \
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 40976EAF437D05B5 \
   && apt-key update -qqy
 # Remove with: sudo apt-key del 3B4FE6ACC0B21F32
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3B4FE6ACC0B21F32 \
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3B4FE6ACC0B21F32 \
   && apt-key update -qqy
 # Remove with: sudo apt-key del A2F683C52980AECF
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys A2F683C52980AECF \
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys A2F683C52980AECF \
   && apt-key update -qqy
 
 #========================
