@@ -933,6 +933,11 @@ ENV FIREFOX_VERSION="${FF_VER}" \
   DEBCONF_NONINTERACTIVE_SEEN=""
 
 #================================
+# Expose Container's Ports
+#================================
+EXPOSE $SELENIUM_HUB_PORT $VNC_PORT
+
+#================================
 # Expose Container's Directories
 #================================
 # VOLUME ${LOGS_DIR}
