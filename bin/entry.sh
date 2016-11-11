@@ -12,6 +12,7 @@ set -e
 sudo rm -f /var/lib/dbus/machine-id
 sudo mkdir -p /var/run/dbus
 sudo service dbus restart
+sudo service ssh restart
 # Test dbus works
 service dbus status
 export $(dbus-launch)

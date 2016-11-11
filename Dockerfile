@@ -639,6 +639,13 @@ COPY selenium-node-chrome/opt /opt
 COPY lib/* /usr/lib/
 
 #===================================================
+# Install SSH Server
+#===================================================
+RUN apt-get -qqy update \
+  && apt-get install -qyy --no-install-recommends ssh \
+  && rm -rf /var/lib/apt/lists/*
+
+#===================================================
 # Run the following commands as non-privileged user
 #===================================================
 USER seluser
@@ -664,6 +671,7 @@ RUN  wget -nv -O chromedriver_linux${CPU_ARCH}.zip ${CHROME_DRIVER_URL} \
   && ln -s chromedriver-${CHROME_DRIVER_VERSION} \
            chromedriver \
   && sudo ln -s /home/seluser/chromedriver /usr/bin
+
 
 #=================
 # Supervisor conf
@@ -986,6 +994,7 @@ COPY scm-source.json /
 #  ./host-scripts/gen-scm-source.sh
 # on the host machine
 
+
 #==================
 # ENTRYPOINT & CMD
 #==================
@@ -993,3 +1002,4 @@ COPY scm-source.json /
 # brackets [] causes Docker to run your process
 # And using `bash` which doesn’t handle signals properly
 CMD ["entry.sh"]
+
