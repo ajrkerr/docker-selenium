@@ -986,6 +986,11 @@ RUN sudo touch /capabilities.json \
   && sudo chmod 1777 /tmp/.X11-unix /tmp/.ICE-unix \
   && echo ""
 
+#===================================
+# Save environment variables for future use via SSH
+#===================================
+RUN env | sudo tee /etc/environment
+
 #=====================================================
 # Meta JSON file to hold commit info of current build
 #=====================================================
