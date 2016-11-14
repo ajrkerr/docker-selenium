@@ -943,7 +943,7 @@ ENV FIREFOX_VERSION="${FF_VER}" \
 #================================
 # Expose Container's Ports
 #================================
-EXPOSE $SELENIUM_HUB_PORT $VNC_PORT
+EXPOSE $SELENIUM_HUB_PORT
 
 #================================
 # Expose Container's Directories
